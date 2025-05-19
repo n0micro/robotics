@@ -14,5 +14,8 @@ COPY . .
 # Встановлюємо змінну середовища для порту (Cloud Run задасть PORT автоматично)
 ENV PORT=3000
 
+COPY robots.json ./robots.json
+
+
 # Запускаємо додаток
 CMD exec gunicorn --bind :$PORT --workers 1 --threads 8 --timeout 0 server:app
