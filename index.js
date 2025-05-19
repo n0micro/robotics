@@ -4,7 +4,7 @@ let currentRobotIndex = 0;
 let currentImageIndex = 0;
 
 function loadRobots() {
-    fetch('robots.json')
+    fetch('/robots')
         .then(response => response.json())
         .then(data => {
             robots = data;
